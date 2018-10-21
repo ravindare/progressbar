@@ -1,0 +1,111 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="d-flex flex-column h-100">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand navbar-dark bg-primary m-0">
+
+            <a href="" class="navbar-brand"> <h3>ProgressBar Demo</h3> </a>
+
+        </nav>
+        <!-- // END Navbar -->
+
+        <div class="mdk-drawer-layout js-mdk-drawer-layout flex" data-fullbleed data-push data-has-scrolling-region>
+            <div class="mdk-drawer-layout__content ">
+              <div class="container-fluid">
+
+                  <!--   <div class="card-columns">  -->
+                        <div class="card">
+                               <div class="card-header  bg-success">
+                                    <h4 class="card-title"><b>ProgressBar Panel</b> </h4>
+
+                                </div>
+                                <div class="card" *ngFor = "let i of progresspercent  ; let rowIndex = index" >
+                                      <div class="card-header bg-sm">
+                                           <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" id={{i}}{{rowIndex}} [style.width]="i+'%'" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">{{i}}%</div>
+                                      </div>
+
+
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-group ">
+
+                                        <div class="card" >
+                                            <div class="card-header bg-sm">
+                                                <b class="text-muted"> ProgressBar A Limit  : {{progressvalue[0]}}</b>
+                                            </div>
+                                        </div>
+
+                                       <div class="card" >
+                                          <div class="card-header bg-sm">
+                                              <b class="text-muted"> ProgressBar B Limit  : {{progressvalue[1]}}</b>
+                                          </div>
+                                        </div>
+
+                                        <div class="card" >
+                                           <div class="card-header bg-sm">
+                                             <b class="text-muted"> ProgressBar C Limit  : {{progressvalue[2]}}</b>
+                                           </div>
+                                        </div>
+
+									</div>
+
+                                </div>
+                                        
+								<div class="card">
+                                    <div class="card-footer bg-white">
+                                        <div class="card-group ">
+                                            <div class="card">
+                                                <div class="card-header bg-white">
+                                                    <select  name='shape_id'  (change)="selectChangeHandler($event)" class="form-control" >
+                                                                    <option>Select</option>
+                                                                    <option>ProgressBar A</option>
+                                                                    <option>ProgressBar B</option>
+                                                                    <option>ProgressBar C</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="card"  *ngFor = "let but of httpdata.buttons">
+                                                <div class="card-header bg-white">
+                                                   <button id={{but}} class="btn btn-success " (click)="myClickFunction($event)"> {{but}} </button>
+											    </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                               </div>
+
+                        </div>
+
+
+                 </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Bootstrap -->
+     <script src="assets/vendor/bootstrap.min.js"></script>
+
+   
+
+
+</body>
+
+
+</html>
